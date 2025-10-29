@@ -1,0 +1,41 @@
+1. sudo reboot
+2. sudo su  ->kbkb123*
+3.  ls -al
+
+nohup cloudflared tunnel --url http://localhost:80 --ha-connections 4 > cloudflared-$(date +%F).log 2>&1 &
+nohup python3 appSucc_250621.py > appSucc_251029.log 2>&1 &
+(myaws1) root@ip-172-31-17-36:/home/ubuntu# nohup python3 QFMOKX_linux_YHbotSucc.py > QFMOKX_linux_YHbotSucc.log 2>&1 &
+
+4. cloudflared-2025-10-20.log    ->  https://anything-reliability-decorating-last.trycloudflare.com/webhook  -> tradingView Webhook URL 에 설정 복사 붙여넣기
+
+5. source myenvk1/bin/activate
+
+6. python3 appSucc_250621.py  ->  nohup python3 appSucc_250621.py > appSucc_251020.log 2>&1 &
+
+7. nano appSucc_251020.log
+
+8. ps aux | grep cloudflared
+
+9. ps ax | grep .py
+   후 1290 pts/1    Sl     0:00 python3 appSucc_250621.py  확인
+
+#PyQt5==5.15.9
+pykiwoom==0.1.6
+pandas==2.0.3
+numpy==1.24.3
+
+cloudflared 리눅스 설치 방법 
+1. 저장소 파일 수정 (가장 중요)
+
+cloudflared 경로가 포함된 새 명령어를 터미널에 입력해 주세요. (여전히 'jammy' 버전을 사용합니다.)
+Bash
+
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-archive-keyring.gpg] https://pkg.cloudflare.com/cloudflared jammy main" | sudo tee /etc/apt/sources.list.d/cloudflare.list
+
+2. 패키지 목록 업데이트 및 설치
+
+이제 apt update를 실행하면 올바른 경로를 참조하여 404 오류가 해결됩니다.
+Bash
+
+sudo apt update
+sudo apt install cloudflared
